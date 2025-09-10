@@ -3,15 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jamiu A. Olamilekan | Frontend Developer</title>
+  <title>Jamiu Abdulrasaq Olamilekan | Frontend Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>OLA'S TECH</h1>
-      <nav>
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand">
+        <span class="brand__logo">OLA’S TECH</span>
+        <span class="brand__tag">Beyond Code, Beyond Limits</span>
+      </a>
+
+      <nav class="menu">
+        <a href="#home">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -19,89 +34,257 @@
     </div>
   </header>
 
+  <!-- ===== HERO ===== -->
   <section id="home" class="hero">
-    <div class="container">
-      <h2>Hi, I'm <span>Jamiu A. Olamilekan</span></h2>
-      <p>I craft interactive and responsive websites using HTML, CSS, JavaScript, and React.</p>
-      <a href="#projects" class="btn">View Projects</a>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Frontend Developer</p>
+        <h1 class="hero__title">
+          Hi, I’m <span class="hl">Jamiu A. Olamilekan</span>
+        </h1>
+        <h2 class="hero__subtitle">
+          <span class="typing" data-text="I design polished, performant interfaces."></span>
+        </h2>
+        <p class="hero__bio">
+          I craft responsive, accessible web experiences with HTML, CSS, JavaScript, and React — engineered for speed, clarity, and impact.
+        </p>
+        <div class="cta">
+          <a href="#projects" class="btn btn--gold">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Hire Me</a>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__num">10+</span>
+            <span class="stat__label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">95%</span>
+            <span class="stat__label">Lighthouse Perf</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num"><span class="dot"></span>Live</span>
+            <span class="stat__label">Production Demos</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="hero__glow"></div>
   </section>
 
-  <section id="projects">
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Quiz App</h3>
-          <p>A responsive quiz app using JavaScript.</p>
-          <a href=" https://olastech001.github.io/Quiz-App/">View Demo</a>
-        </div>
-       
-        <div class="project-card">
-          <h3>Portfolio Website</h3>
-          <p>This personal portfolio website you’re viewing now.</p>
-          <a href="https://olastech001.github.io/Portfolio/">View Live</a>
-        </div>
-        
-        <div class="project-card">
-          <h3>Log-in Form </h3>
-          <p>A Log-in form Interface.</p>
-          <a href="https://olastech001.github.io/FORM/">View Demo</a>
-        </div>
-        
-        <div class="project-card">
-          <h3>CALCULATOR </h3>
-          <p>A calculator built by using javascript.</p>
-          <a href="https://olastech001.github.io/calculator/">View Demo</a>
-        </div>
+      <div class="section__head">
+        <h3 class="section__title">Featured Projects</h3>
+        <p class="section__desc">Real, shippable work — clean UI, solid UX, and maintainable code.</p>
+      </div>
 
-        
-        <div class="project-card">
-          <h3>Log-in form </h3>
-          <p>A Log-in form Interface with background image and animations .</p>
-          <a href="https://olastech001.github.io/form-2/">View Demo</a>
-        </div>
+      <div class="grid projects">
+        <!-- Quiz App -->
+        <article class="card">
+          <div class="card__badge">JavaScript</div>
+          <div class="card__body">
+            <h4 class="card__title">Quiz App</h4>
+            <p class="card__text">Responsive quiz with dynamic scoring, progress, and friendly UI.</p>
+          </div>
+          <div class="card__actions">
+            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/Quiz-App/">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+          </div>
+        </article>
 
-        
-        <!-- Add more projects here -->
+        <!-- Portfolio -->
+        <article class="card">
+          <div class="card__badge">Portfolio</div>
+          <div class="card__body">
+            <h4 class="card__title">Portfolio Website</h4>
+            <p class="card__text">Modern black & gold design, animations, and accessible layout.</p>
+          </div>
+          <div class="card__actions">
+            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/Portfolio/">
+              <i class='bx bx-link-external'></i> View Live
+            </a>
+          </div>
+        </article>
+
+        <!-- Login Form -->
+        <article class="card">
+          <div class="card__badge">UI</div>
+          <div class="card__body">
+            <h4 class="card__title">Login Form</h4>
+            <p class="card__text">Minimal animated auth UI with validation patterns.</p>
+          </div>
+          <div class="card__actions">
+            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/FORM/">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+          </div>
+        </article>
+
+        <!-- Calculator -->
+        <article class="card">
+          <div class="card__badge">JavaScript</div>
+          <div class="card__body">
+            <h4 class="card__title">Calculator</h4>
+            <p class="card__text">Simple, accessible calculator with keyboard support.</p>
+          </div>
+          <div class="card__actions">
+            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/calculator/">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+          </div>
+        </article>
+
+        <!-- Login Form v2 -->
+        <article class="card">
+          <div class="card__badge">UI</div>
+          <div class="card__body">
+            <h4 class="card__title">Login Form v2</h4>
+            <p class="card__text">Animated background with crisp form UX and motion.</p>
+          </div>
+          <div class="card__actions">
+            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/form-2/">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I'm a front-end developer with a passion for clean UI and smooth UX. I enjoy turning ideas into interactive web experiences.</p>
-      <h3>Skills</h3>
-      <ul class="skills">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>PHP</li>
-      </ul>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section section--panel">
+    <div class="container about">
+      <div class="about__text">
+        <h3 class="section__title">About Me</h3>
+        <p class="lead">
+          I’m a frontend developer focused on **clarity, performance, and polish**. I translate product requirements into elegant, accessible interfaces — keeping
+          pixels consistent, interactions intuitive, and bundles lean. My core stack is **HTML, CSS, JavaScript, and React**, with strong fundamentals in web standards,
+          a11y, and component architecture.
+        </p>
+        <p class="lead">
+          I care about **shipping**: small pull requests, meaningful commits, clean git history, and code that teammates enjoy reading. I’m comfortable pairing,
+          reviewing PRs, and documenting decisions. My philosophy: **build fast, measure, refine** — always pushing “beyond code, beyond limits.”
+        </p>
+
+        <div class="skills">
+          <div class="skill"><i class='bx bxl-html5'></i><span>HTML5</span></div>
+          <div class="skill"><i class='bx bxl-css3'></i><span>CSS3</span></div>
+          <div class="skill"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+          <div class="skill"><i class='bx bxl-react'></i><span>React</span></div>
+          <div class="skill"><i class='bx bxl-php'></i><span>PHP</span></div>
+          <div class="skill"><i class='bx bxl-git'></i><span>Git</span></div>
+          <div class="skill"><i class='bx bxl-github'></i><span>GitHub</span></div>
+        </div>
+      </div>
+
+      <div class="about__card">
+        <h4>What I Bring</h4>
+        <ul class="ticks">
+          <li>Pixel-perfect, responsive UIs</li>
+          <li>Clean components & reusable patterns</li>
+          <li>Performance-first mindset</li>
+          <li>Accessibility & semantic HTML</li>
+          <li>Clear communication & teamwork</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Want to work together or say hi? Let's connect!</p><br> 
-      <a href="mailto:abdulrasaqj87@gmail.com" class="btn">Send an Email</a> <br> <br>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="container contact">
+      <div class="section__head">
+        <h3 class="section__title">Let’s work together</h3>
+        <p class="section__desc">Reach me directly via Email or WhatsApp. I respond fast.</p>
+      </div>
+
+      <div class="contact__actions">
+        <a class="btn btn--gold" href="mailto:abdulrasaqj87@gmail.com">
+          <i class='bx bxl-gmail'></i> Email Me
+        </a>
+        <a class="btn btn--ghost" target="_blank"
+           href="https://wa.me/2348162755114?text=Hello%20Jamiu,%20I%27m%20interested%20in%20working%20with%20you.">
+          <i class='bx bxl-whatsapp'></i> WhatsApp Me
+        </a>
+      </div>
+
       <div class="socials">
-        <a href="https://github.com/OLASTECH001">GitHub</a>
-        <a href="https://www.linkedin.com/in/jamiu-olamilekan-ab3780343/">LinkedIn</a>
-        <a href="https://twitter.com/Kayluzred ">Twitter</a>
+        <a target="_blank" href="https://github.com/OLASTECH001"><i class='bx bxl-github'></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/jamiu-olamilekan-ab3780343/"><i class='bx bxl-linkedin'></i></a>
+        <a target="_blank" href="https://twitter.com/Kayluzred"><i class='bx bxl-twitter'></i></a>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Jamiu A. Olamilekan. All rights reserved.</p>
+      <p>© 2025 Jamiu A. Olamilekan — Beyond Code, Beyond Limits</p>
     </div>
   </footer>
 
 </body>
-</html>
+<!-- ScrollReveal CDN -->
+<script src="https://unpkg.com/scrollreveal"></script>
 
+  <!-- Make entire project card clickable (keeps inner links functional) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card').forEach(card => {
+        // find the first anchor inside the card actions (your demo link)
+        const link = card.querySelector('.card__actions a[href]');
+        if (!link) return;
+
+        const url = link.href;
+
+        // visual affordance
+        card.style.cursor = 'pointer';
+        card.setAttribute('role', 'link');
+        card.setAttribute('tabindex', '0');
+
+        // click anywhere on card (except when user clicked a link)
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return; // let real <a> handle it
+          window.open(url, '_blank', 'noopener');
+        });
+
+        // keyboard access: Enter or Space opens the link
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.open(url, '_blank', 'noopener');
+          }
+        });
+      });
+    });
+    
+  </script>
+  <script>
+  // Scroll animations
+  const sr = ScrollReveal({
+    distance: "60px",
+    duration: 1200,
+    delay: 200,
+    easing: "ease-out",
+    reset: false // set to true if you want animations every time you scroll back
+  });
+
+  sr.reveal(".hero__text", { origin: "left" });
+  sr.reveal(".hero__panel", { origin: "right", delay: 400 });
+
+  sr.reveal(".section__head", { origin: "top" });
+  sr.reveal(".projects .card", { origin: "bottom", interval: 200 });
+  sr.reveal(".about__text", { origin: "left" });
+  sr.reveal(".about__card", { origin: "right", delay: 300 });
+  sr.reveal(".skills .skill", { origin: "bottom", interval: 150 });
+  sr.reveal(".contact__actions", { origin: "bottom", delay: 200 });
+  sr.reveal(".socials a", { origin: "bottom", interval: 150 });
+</script>
+
+
+</html>
