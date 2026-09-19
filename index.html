@@ -17,6 +17,9 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a href="#home" class="skip-link">Skip to content</a>
+
   <!-- ===== NAVBAR ===== -->
   <header class="nav">
     <div class="container nav__inner">
@@ -25,12 +28,18 @@
         <span class="brand__tag">Beyond Code, Beyond Limits</span>
       </a>
 
-      <nav class="menu">
+      <nav class="menu" id="menu" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="menu">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
     </div>
   </header>
 
@@ -91,8 +100,8 @@
             <p class="card__text">Responsive quiz with dynamic scoring, progress, and friendly UI.</p>
           </div>
           <div class="card__actions">
-            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/Quiz-App/">
-              <i class='bx bx-link-external'></i> Live Demo
+            <a class="btn btn--tiny" target="_blank" rel="noopener noreferrer" href="https://olastech001.github.io/Quiz-App/" aria-label="View Quiz App live demo">
+              <i class='bx bx-link-external' aria-hidden="true"></i> Live Demo
             </a>
           </div>
         </article>
@@ -105,8 +114,8 @@
             <p class="card__text">Modern black & gold design, animations, and accessible layout.</p>
           </div>
           <div class="card__actions">
-            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/Portfolio/">
-              <i class='bx bx-link-external'></i> View Live
+            <a class="btn btn--tiny" target="_blank" rel="noopener noreferrer" href="https://olastech001.github.io/Portfolio/" aria-label="View Portfolio Website live">
+              <i class='bx bx-link-external' aria-hidden="true"></i> View Live
             </a>
           </div>
         </article>
@@ -119,8 +128,8 @@
             <p class="card__text">Minimal animated auth UI with validation patterns.</p>
           </div>
           <div class="card__actions">
-            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/FORM/">
-              <i class='bx bx-link-external'></i> Live Demo
+            <a class="btn btn--tiny" target="_blank" rel="noopener noreferrer" href="https://olastech001.github.io/FORM/" aria-label="View Login Form live demo">
+              <i class='bx bx-link-external' aria-hidden="true"></i> Live Demo
             </a>
           </div>
         </article>
@@ -133,8 +142,8 @@
             <p class="card__text">Simple, accessible calculator with keyboard support.</p>
           </div>
           <div class="card__actions">
-            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/calculator/">
-              <i class='bx bx-link-external'></i> Live Demo
+            <a class="btn btn--tiny" target="_blank" rel="noopener noreferrer" href="https://olastech001.github.io/calculator/" aria-label="View Calculator live demo">
+              <i class='bx bx-link-external' aria-hidden="true"></i> Live Demo
             </a>
           </div>
         </article>
@@ -147,8 +156,8 @@
             <p class="card__text">Animated background with crisp form UX and motion.</p>
           </div>
           <div class="card__actions">
-            <a class="btn btn--tiny" target="_blank" href="https://olastech001.github.io/form-2/">
-              <i class='bx bx-link-external'></i> Live Demo
+            <a class="btn btn--tiny" target="_blank" rel="noopener noreferrer" href="https://olastech001.github.io/form-2/" aria-label="View Login Form v2 live demo">
+              <i class='bx bx-link-external' aria-hidden="true"></i> Live Demo
             </a>
           </div>
         </article>
@@ -162,23 +171,23 @@
       <div class="about__text">
         <h3 class="section__title">About Me</h3>
         <p class="lead">
-          I’m a frontend developer focused on **clarity, performance, and polish**. I translate product requirements into elegant, accessible interfaces — keeping
+          I’m a frontend developer focused on clarity, performance, and polish. I translate product requirements into elegant, accessible interfaces — keeping
           pixels consistent, interactions intuitive, and bundles lean. My core stack is **HTML, CSS, JavaScript, and React**, with strong fundamentals in web standards,
-          a11y, and component architecture.
+          accessibility, and component architecture.
         </p>
         <p class="lead">
-          I care about **shipping**: small pull requests, meaningful commits, clean git history, and code that teammates enjoy reading. I’m comfortable pairing,
-          reviewing PRs, and documenting decisions. My philosophy: **build fast, measure, refine** — always pushing “beyond code, beyond limits.”
+          I care about shipping: small pull requests, meaningful commits, clean git history, and code that teammates enjoy reading. I’m comfortable pairing,
+          reviewing PRs, and documenting decisions. My philosophy: build fast, measure, refine — always pushing “beyond code, beyond limits.”
         </p>
 
         <div class="skills">
-          <div class="skill"><i class='bx bxl-html5'></i><span>HTML5</span></div>
-          <div class="skill"><i class='bx bxl-css3'></i><span>CSS3</span></div>
-          <div class="skill"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
-          <div class="skill"><i class='bx bxl-react'></i><span>React</span></div>
-          <div class="skill"><i class='bx bxl-php'></i><span>PHP</span></div>
-          <div class="skill"><i class='bx bxl-git'></i><span>Git</span></div>
-          <div class="skill"><i class='bx bxl-github'></i><span>GitHub</span></div>
+          <div class="skill"><i class='bx bxl-html5' aria-hidden="true"></i><span>HTML5</span></div>
+          <div class="skill"><i class='bx bxl-css3' aria-hidden="true"></i><span>CSS3</span></div>
+          <div class="skill"><i class='bx bxl-javascript' aria-hidden="true"></i><span>JavaScript</span></div>
+          <div class="skill"><i class='bx bxl-react' aria-hidden="true"></i><span>React</span></div>
+          <div class="skill"><i class='bx bxl-php' aria-hidden="true"></i><span>PHP</span></div>
+          <div class="skill"><i class='bx bxl-git' aria-hidden="true"></i><span>Git</span></div>
+          <div class="skill"><i class='bx bxl-github' aria-hidden="true"></i><span>GitHub</span></div>
         </div>
       </div>
 
@@ -204,19 +213,20 @@
       </div>
 
       <div class="contact__actions">
-        <a class="btn btn--gold" href="mailto:abdulrasaqj87@gmail.com">
-          <i class='bx bxl-gmail'></i> Email Me
+        <a class="btn btn--gold" href="mailto:abdulrasaqj87@gmail.com" aria-label="Send email to Jamiu">
+          <i class='bx bxl-gmail' aria-hidden="true"></i> Email Me
         </a>
-        <a class="btn btn--ghost" target="_blank"
-           href="https://wa.me/2348162755114?text=Hello%20Jamiu,%20I%27m%20interested%20in%20working%20with%20you.">
-          <i class='bx bxl-whatsapp'></i> WhatsApp Me
+        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+           href="https://wa.me/2348162755114?text=Hello%20Jamiu,%20I%27m%20interested%20in%20working%20with%20you."
+           aria-label="Chat on WhatsApp">
+          <i class='bx bxl-whatsapp' aria-hidden="true"></i> WhatsApp Me
         </a>
       </div>
 
       <div class="socials">
-        <a target="_blank" href="https://github.com/OLASTECH001"><i class='bx bxl-github'></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/jamiu-olamilekan-ab3780343/"><i class='bx bxl-linkedin'></i></a>
-        <a target="_blank" href="https://twitter.com/Kayluzred"><i class='bx bxl-twitter'></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/OLASTECH001" aria-label="GitHub"><i class='bx bxl-github' aria-hidden="true"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jamiu-olamilekan-ab3780343/" aria-label="LinkedIn"><i class='bx bxl-linkedin' aria-hidden="true"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Kayluzred" aria-label="Twitter"><i class='bx bxl-twitter' aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
@@ -224,36 +234,54 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Jamiu A. Olamilekan — Beyond Code, Beyond Limits</p>
+      <p>&copy; 2025 Jamiu A. Olamilekan &mdash; Beyond Code, Beyond Limits</p>
     </div>
   </footer>
 
-</body>
-<!-- ScrollReveal CDN -->
-<script src="https://unpkg.com/scrollreveal"></script>
+  <!-- ===== SCRIPTS (inside <body>) ===== -->
+
+  <!-- Hamburger menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+      });
+
+      // Close menu when a link is clicked
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+        });
+      });
+    });
+  </script>
 
   <!-- Make entire project card clickable (keeps inner links functional) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.card').forEach(card => {
-        // find the first anchor inside the card actions (your demo link)
         const link = card.querySelector('.card__actions a[href]');
         if (!link) return;
 
         const url = link.href;
+        const label = link.getAttribute('aria-label') || link.textContent.trim();
 
-        // visual affordance
-        card.style.cursor = 'pointer';
         card.setAttribute('role', 'link');
         card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', label);
 
-        // click anywhere on card (except when user clicked a link)
         card.addEventListener('click', (e) => {
-          if (e.target.closest('a')) return; // let real <a> handle it
+          if (e.target.closest('a')) return;
           window.open(url, '_blank', 'noopener');
         });
 
-        // keyboard access: Enter or Space opens the link
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -262,30 +290,36 @@
         });
       });
     });
-    
   </script>
+
+  <!-- ScrollReveal CDN (with fallback) -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-  // Scroll animations
-  const sr = ScrollReveal({
-    distance: "60px",
-    duration: 1200,
-    delay: 200,
-    easing: "ease-out",
-    reset: false // set to true if you want animations every time you scroll back
-  });
+    // Check reduced-motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  sr.reveal(".hero__text", { origin: "left" });
-  sr.reveal(".hero__panel", { origin: "right", delay: 400 });
+    if (typeof ScrollReveal !== 'undefined' && !prefersReducedMotion) {
+      const sr = ScrollReveal({
+        distance: "60px",
+        duration: 1200,
+        delay: 200,
+        easing: "ease-out",
+        reset: false
+      });
 
-  sr.reveal(".section__head", { origin: "top" });
-  sr.reveal(".projects .card", { origin: "bottom", interval: 200 });
-  sr.reveal(".about__text", { origin: "left" });
-  sr.reveal(".about__card", { origin: "right", delay: 300 });
-  sr.reveal(".skills .skill", { origin: "bottom", interval: 150 });
-  sr.reveal(".contact__actions", { origin: "bottom", delay: 200 });
-  sr.reveal(".socials a", { origin: "bottom", interval: 150 });
-</script>
+      sr.reveal(".hero__text", { origin: "left" });
+      sr.reveal(".hero__panel", { origin: "right", delay: 400 });
+      sr.reveal(".section__head", { origin: "top" });
+      sr.reveal(".projects .card", { origin: "bottom", interval: 200 });
+      sr.reveal(".about__text", { origin: "left" });
+      sr.reveal(".about__card", { origin: "right", delay: 300 });
+      sr.reveal(".skills .skill", { origin: "bottom", interval: 150 });
+      sr.reveal(".contact__actions", { origin: "bottom", delay: 200 });
+      sr.reveal(".socials a", { origin: "bottom", interval: 150 });
+    }
+    // If ScrollReveal failed to load or reduced-motion is preferred,
+    // content simply appears without animation — no crash.
+  </script>
 
-
+</body>
 </html>
-
