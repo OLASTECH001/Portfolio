@@ -17,6 +17,8 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a href="#home" class="skip-link">Skip to content</a>
 
   <!-- ===== NAVBAR ===== -->
   <header class="nav">
@@ -40,6 +42,9 @@
       </button>
     </div>
   </header>
+
+  <!-- Mobile menu backdrop (real element, not ::before) -->
+  <div class="menu-backdrop" id="menuBackdrop"></div>
 
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
@@ -170,7 +175,7 @@
         <h3 class="section__title">About Me</h3>
         <p class="lead">
           I’m a frontend developer focused on clarity, performance, and polish. I translate product requirements into elegant, accessible interfaces — keeping
-          pixels consistent, interactions intuitive, and bundles lean. My core stack is **HTML, CSS, JavaScript, and React**, with strong fundamentals in web standards,
+          pixels consistent, interactions intuitive, and bundles lean. My core stack is <strong>HTML, CSS, JavaScript, and React</strong>, with strong fundamentals in web standards,
           accessibility, and component architecture.
         </p>
         <p class="lead">
@@ -232,7 +237,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Jamiu A. Olamilekan &mdash; Beyond Code, Beyond Limits</p>
+      <p>&copy; 2026 Jamiu A. Olamilekan &mdash; Beyond Code, Beyond Limits</p>
     </div>
   </footer>
 
@@ -243,12 +248,14 @@
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('menuToggle');
       const menu = document.getElementById('menu');
+      const backdrop = document.getElementById('menuBackdrop');
       if (!toggle || !menu) return;
 
       toggle.addEventListener('click', () => {
         const expanded = toggle.getAttribute('aria-expanded') === 'true';
         toggle.setAttribute('aria-expanded', String(!expanded));
         menu.classList.toggle('open');
+        if (backdrop) backdrop.classList.toggle('open');
       });
 
       // Close menu when a link is clicked
@@ -256,8 +263,18 @@
         link.addEventListener('click', () => {
           toggle.setAttribute('aria-expanded', 'false');
           menu.classList.remove('open');
+          if (backdrop) backdrop.classList.remove('open');
         });
       });
+
+      // Close menu when backdrop is clicked
+      if (backdrop) {
+        backdrop.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+          backdrop.classList.remove('open');
+        });
+      }
     });
   </script>
 
@@ -293,27 +310,50 @@
   <!-- ScrollReveal CDN (with fallback) -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    // Check reduced-motion preference
+    // Check reduced-motion preference and mobile viewport
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     if (typeof ScrollReveal !== 'undefined' && !prefersReducedMotion) {
-      const sr = ScrollReveal({
-        distance: "60px",
-        duration: 1200,
-        delay: 200,
-        easing: "ease-out",
-        reset: false
-      });
+      if (isMobile) {
+        // Mobile: lighter config, animate only major sections
+        const sr = ScrollReveal({
+          distance: "30px",
+          duration: 600,
+          delay: 100,
+          easing: "ease-out",
+          reset: false
+        });
 
-      sr.reveal(".hero__text", { origin: "left" });
-      sr.reveal(".hero__panel", { origin: "right", delay: 400 });
-      sr.reveal(".section__head", { origin: "top" });
-      sr.reveal(".projects .card", { origin: "bottom", interval: 200 });
-      sr.reveal(".about__text", { origin: "left" });
-      sr.reveal(".about__card", { origin: "right", delay: 300 });
-      sr.reveal(".skills .skill", { origin: "bottom", interval: 150 });
-      sr.reveal(".contact__actions", { origin: "bottom", delay: 200 });
-      sr.reveal(".socials a", { origin: "bottom", interval: 150 });
+        sr.reveal(".hero__text", { origin: "left" });
+        sr.reveal(".hero__panel", { origin: "right", delay: 200 });
+        sr.reveal(".section__head", { origin: "top" });
+        sr.reveal(".projects .card", { origin: "bottom", interval: 80 });
+        sr.reveal(".about__text", { origin: "left" });
+        sr.reveal(".about__card", { origin: "right", delay: 150 });
+        sr.reveal(".skills", { origin: "bottom" });
+        sr.reveal(".contact__actions", { origin: "bottom" });
+        sr.reveal(".socials", { origin: "bottom" });
+      } else {
+        // Desktop: full animations
+        const sr = ScrollReveal({
+          distance: "60px",
+          duration: 1200,
+          delay: 200,
+          easing: "ease-out",
+          reset: false
+        });
+
+        sr.reveal(".hero__text", { origin: "left" });
+        sr.reveal(".hero__panel", { origin: "right", delay: 400 });
+        sr.reveal(".section__head", { origin: "top" });
+        sr.reveal(".projects .card", { origin: "bottom", interval: 200 });
+        sr.reveal(".about__text", { origin: "left" });
+        sr.reveal(".about__card", { origin: "right", delay: 300 });
+        sr.reveal(".skills .skill", { origin: "bottom", interval: 150 });
+        sr.reveal(".contact__actions", { origin: "bottom", delay: 200 });
+        sr.reveal(".socials a", { origin: "bottom", interval: 150 });
+      }
     }
     // If ScrollReveal failed to load or reduced-motion is preferred,
     // content simply appears without animation — no crash.

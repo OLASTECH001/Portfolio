@@ -22,21 +22,9 @@
 /* ===== RESET ===== */
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
+body{ overflow-x:hidden; }
 img{ max-width:100%; display:block; }
 a{ text-decoration:none; }
-
-/* ===== SKIP LINK (accessibility) ===== */
-.skip-link{
-  position:absolute; left:-9999px; top:auto;
-  width:1px; height:1px; overflow:hidden;
-  z-index:10000;
-  background: var(--gold); color: #1a1a1a;
-  padding:12px 20px; font-weight:700; border-radius:0 0 8px 0;
-}
-.skip-link:focus{
-  position:fixed; left:0; top:0;
-  width:auto; height:auto; overflow:visible;
-}
 
 /* ===== BASE ===== */
 body{
@@ -56,6 +44,7 @@ body{
   background: rgba(11,15,25,0.75);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+  will-change: transform;
 }
 .nav__inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
 
@@ -270,8 +259,39 @@ body{
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ===== MENU BACKDROP (mobile) ===== */
+.menu-backdrop{
+  display:none; position:fixed; inset:0; z-index:998;
+  background: rgba(0,0,0,0.5);
+}
+.menu-backdrop.open{ display:block; }
+
 /* ===== TABLET (max-width 768px) ===== */
 @media (max-width: 768px){
+  html{ scroll-behavior:auto; }
+
+  /* --- Performance: kill expensive effects --- */
+  .nav{ backdrop-filter:none; background: rgba(11,15,25,0.95); will-change:auto; }
+  .hero__glow{ filter:none; }
+  .card::after{ display:none; }
+  .dot{ box-shadow: 0 0 8px #36e58a; }
+
+  /* --- Remove hover transforms (no hover on touch) --- */
+  .stat:hover,
+  .skill:hover,
+  .socials a:hover,
+  .btn--tiny:hover,
+  .btn--gold:hover,
+  .btn--ghost:hover{
+    transform:none; box-shadow:none;
+  }
+  .stat:hover{ box-shadow:none; }
+  .card:hover{ transform:none; box-shadow:none; border-color: var(--line); }
+  .card:focus-visible{
+    transform:none;
+  }
+
+  /* --- Layout --- */
   .menu-toggle{ display:block; }
 
   .menu{
@@ -283,12 +303,6 @@ body{
     border-left: 1px solid var(--line);
   }
   .menu.open{ right:0; }
-
-  /* backdrop overlay */
-  .menu::before{
-    content:""; position:fixed; inset:0; z-index:-1;
-    background: rgba(0,0,0,0.5);
-  }
 
   .menu a{
     width:100%; padding:14px 0; font-size:1.05rem;
